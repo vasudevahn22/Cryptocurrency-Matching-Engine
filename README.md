@@ -56,4 +56,4 @@ FastAPI
 | `stop_limit`  | Triggers limit order when stop is hit     |
 | `take_profit` | Triggers when price exceeds target        |
 
-## Made by Vasudeva H N
+Made by Vasudeva H N
