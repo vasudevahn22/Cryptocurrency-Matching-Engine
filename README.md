@@ -1,5 +1,5 @@
 # Cryptocurrency-Matching-Engine
-# ⚡ Crypto Matching Engine
+# Crypto Matching Engine
 
 A high-performance, real-time cryptocurrency matching engine built with **FastAPI**, featuring advanced order types, WebSocket trade broadcasting, fee logic, and persistent state recovery.
 
@@ -10,19 +10,19 @@ A high-performance, real-time cryptocurrency matching engine built with **FastAP
 
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ **Real-Time Matching Engine**
-- ✅ **Order Types**: Market, Limit, IOC, FOK, Stop-Loss, Stop-Limit, Take-Profit
-- ✅ **Maker-Taker Fee Model**
-- ✅ **RESTful APIs** for BBO, Order Book, and Order Submission
-- ✅ **WebSocket Broadcasts** for live trade updates
-- ✅ **Persistence**: Automatic recovery using JSON-based state file
-- ✅ **Test Coverage**: PyTest-based unit and integration tests
+- **Real-Time Matching Engine**
+- **Order Types**: Market, Limit, IOC, FOK, Stop-Loss, Stop-Limit, Take-Profit
+- **Maker-Taker Fee Model**
+- **RESTful APIs** for BBO, Order Book, and Order Submission
+- **WebSocket Broadcasts** for live trade updates
+- **Persistence**: Automatic recovery using JSON-based state file
+- **Test Coverage**: PyTest-based unit and integration tests
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
 FastAPI
@@ -45,6 +45,7 @@ FastAPI
 └── Test Suite
     └── tests.py (PyTest + httpx)
 ```
+## Supported Order Types
 | Type          | Description                               |
 | ------------- | ----------------------------------------- |
 | `market`      | Executes immediately at best price        |
@@ -54,3 +55,5 @@ FastAPI
 | `stop_loss`   | Triggers when price crosses stop          |
 | `stop_limit`  | Triggers limit order when stop is hit     |
 | `take_profit` | Triggers when price exceeds target        |
+
+## Made by Vasudeva H N
