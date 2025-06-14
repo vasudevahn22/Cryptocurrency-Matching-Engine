@@ -45,6 +45,11 @@ A high-performance cryptocurrency matching engine built with Python and FastAPI,
   "trigger_price": "29500"  // Optional (for stop/take orders)
 }
 ```
+## Performance
+
+- Orders/sec: Tracked live via /stats
+- Order latency: Included in response (latency_ms)
+
 ## Tests
 Tests include :
 
