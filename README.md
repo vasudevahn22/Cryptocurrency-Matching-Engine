@@ -34,6 +34,17 @@ A high-performance cryptocurrency matching engine built with Python and FastAPI,
 - ws://localhost:8000/ws/trades: Stream of trade executions
 - ws://localhost:8000/ws/orderbook/{symbol}: Real-time order book update
 
+## Order Format
+
+{
+  "symbol": "BTC-USDT",
+  "order_type": "limit",
+  "side": "buy",
+  "quantity": "1.0",
+  "price": "30000",
+  "trigger_price": "29500"  // Optional (for stop/take orders)
+}
+
 ## Tests
 Tests include :
 
