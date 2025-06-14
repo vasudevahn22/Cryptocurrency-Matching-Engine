@@ -47,8 +47,8 @@ A high-performance cryptocurrency matching engine built with Python and FastAPI,
 ```
 ## Performance
 
-- Orders/sec: Tracked live via /stats
-- Order latency: Included in response (latency_ms)
+- Orders/sec: Tracked live via ```/stats```
+- Order latency: Included in response (```latency_ms```)
 
 ## Tests
 Tests include :
