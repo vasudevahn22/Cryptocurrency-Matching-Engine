@@ -35,7 +35,7 @@ A high-performance cryptocurrency matching engine built with Python and FastAPI,
 - ws://localhost:8000/ws/orderbook/{symbol}: Real-time order book update
 
 ## Order Format
-
+```
 {
   "symbol": "BTC-USDT",
   "order_type": "limit",
@@ -44,7 +44,7 @@ A high-performance cryptocurrency matching engine built with Python and FastAPI,
   "price": "30000",
   "trigger_price": "29500"  // Optional (for stop/take orders)
 }
-
+```
 ## Tests
 Tests include :
 
