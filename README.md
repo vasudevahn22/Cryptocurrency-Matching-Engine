@@ -1,50 +1,54 @@
 # Cryptocurrency-Matching-Engine
 # Crypto Matching Engine
 
-A high-performance, real-time cryptocurrency matching engine built with **FastAPI**, featuring advanced order types, WebSocket trade broadcasting, fee logic, and persistent state recovery.
+A high-performance cryptocurrency matching engine built with Python and FastAPI, implementing REG NMS-inspired principles such as price-time priority, internal order protection, and real-time trade execution.
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-green)
 ![Status](https://img.shields.io/badge/status-production--ready-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
 
 ---
 
 ## Features
 
-- **Real-Time Matching Engine**
-- **Order Types**: Market, Limit, IOC, FOK, Stop-Loss, Stop-Limit, Take-Profit
-- **Maker-Taker Fee Model**
-- **RESTful APIs** for BBO, Order Book, and Order Submission
-- **WebSocket Broadcasts** for live trade updates
-- **Persistence**: Automatic recovery using JSON-based state file
-- **Test Coverage**: PyTest-based unit and integration tests
+- Price-time priority matching
+- Internal order protection (no trade-throughs)
+- Support for core order types: Market, Limit, IOC, FOK
+- Advanced order types: Stop-Loss, Stop-Limit, Take-Profit
+- Real-time BBO (Best Bid & Offer) and order book updates
+- WebSocket trade execution feed
+- Persistent order book recovery
+- Performance benchmarking (latency, throughput)
+- Maker-taker fee model
 
----
+## API Documentation
 
-## Architecture
+- REST Endpoints
+- POST /orders: Submit a new order
+- GET /orderbook/{symbol}: L2 order book snapshot
+- GET /bbo/{symbol}: Best Bid and Offer
+- GET /stats: Engine performance metrics
 
-```text
-FastAPI
-│
-├── REST Endpoints
-│   ├── /submit-order/
-│   ├── /orderbook/{symbol}
-│   └── /best-bid-offer/{symbol}
-│
-├── WebSocket Endpoint
-│   └── /ws
-│
-├── OrderBook
-│   ├── Add, Remove, Match orders
-│   └── Match logic for each order type
-│
-├── Persistence Layer
-│   └── Saves/Loads order book to state.json
-│
-└── Test Suite
-    └── tests.py (PyTest + httpx)
-```
+## WebSocket Endpoints
+
+- ws://localhost:8000/ws/trades: Stream of trade executions
+- ws://localhost:8000/ws/orderbook/{symbol}: Real-time order book update
+
+## Tests
+Tests include :
+
+- Core order types
+- Advanced trigger orders
+- REST API correctness
+- Stats and BBO logic
+
+## Design Choices
+
+- Decimal for financial accuracy
+- FIFO at price level for fairness
+- asyncio lock for thread-safe matching
+- Lightweight pickle persistence
+  
 ## Supported Order Types
 | Type          | Description                               |
 | ------------- | ----------------------------------------- |
